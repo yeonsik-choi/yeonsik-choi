@@ -61,5 +61,4 @@
 
 ## 📬 Contact
 * **Email:** chldustlr559@naver.com
-* **Phone:** 010-2642-5298
 * **GitHub:** yeonsik-choi
