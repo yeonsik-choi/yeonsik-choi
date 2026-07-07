@@ -38,41 +38,34 @@
 ### 메이플 썬데이 웹 개발
 **[maplessunday.com](https://www.maplessunday.com)** · [GitHub](https://github.com/yeonsik-choi/maplessunday-web)
 
-과거 썬데이 메이플 이벤트 데이터를 수집·분석해 다음 이벤트 등장 확률을 예측하는 웹 서비스입니다. Nexon Open API로 실시간 데이터를 연동하고, API 호출 제한 문제는 자체 캐싱 시스템으로 해결했습니다. 프론트(Vercel)와 백엔드(Docker+Render)를 분리 배포해 유지보수성을 높였습니다.
+메이플스토리 썬데이 메이플 이벤트의 사전 공개 부재 문제를 인식, 과거 이벤트 데이터 수집·분석을 통해 다음 주 이벤트을 예측하는 사이트(maplessunday.com)를 직접 기획 및 개발. 역대 이벤트 패턴 시각화 달력, 캐릭터 정보 조회, 게임 소식 통합 등 유저 편의 기능을 구현. 분석 결과를 서비스에 반복 반영한 결과 일평균 접속자 1,000명 이상 달성.
 
 `HTML/CSS/JS` `FastAPI` `Supabase` `Docker` `Vercel` `Nexon Open API`
 
 ---
 
-### 온라인 거래 이상 탐지
+### 딥페이크 탐지 모델 개발
 [GitHub](https://github.com/DGU-BAF/BAF-25-1-society)
 
-IEEE-CIS & Vesta 거래 데이터로 결제 사기를 탐지하는 머신러닝 모델입니다. 사용자 ID가 없는 데이터에서 `card1`, `addr1`, `emaildomain`을 조합한 UID 파생변수를 제안해 핵심 피처로 활용했습니다. LightGBM + CatBoost를 Stacking 앙상블로 결합해 **ROC-AUC 0.952 (Public) / 0.927 (Private)** 를 달성했습니다.
+딥페이크 탐지 모델 개발을 주제로 5주간 CNN, GAN, ViT 등 핵심 기술을 학습. ViT 기반 사전학습 모델(Deep-Fake-Detector-v2)을 파인튜닝하고 얼굴 추출·데이터 증강·샘플링 균형 등 최적화 전략을 적용해 모델을 개발. 최종적으로 DACON 대회에서 Public ROC-AUC 0.8402(46등/459팀), Private 0.8290(48등/458팀)을 기록.
 
 `Python` `LightGBM` `CatBoost` `Optuna` `Scikit-learn`
 
 ---
 
-### 아동·청소년 게임 이용 인식 분석
+### 온라인 카드 거래 이상 탐지 모델링
+[GitHub](https://github.com/DGU-BAF/BAF-25-1-society)
 
-2020~2024년 한국콘텐츠진흥원 패널 데이터를 활용해 게임 행동 유형이 청소년의 삶에 미치는 영향을 실증 분석했습니다. OLS에서 나아가 고정 효과 패널 회귀(Fixed-Effect)를 적용해 개인 특성을 통제하고 인과성을 추정했습니다. 게임 이용이 대인관계 형성에 긍정적 영향을 미침을 통계적으로 검증했습니다.
+PG사 온라인 결제 데이터를 대상으로 EDA, 결측치 처리, UID 파생변수를 설계하고, LightGBM, CatBoost 스태킹 앙상블로 이상 거래(사기 거래) 여부를 예측해 ROC-AUC 0.986 성능을 달성한 프로젝트.
 
-`R` `dplyr` `plm` `gtsummary`
-
----
-
-### 동국대학교 파이썬 강의 챗봇
-
-강의안 데이터를 Key-Value 구조로 직접 구축하고, `difflib.get_close_matches`로 유사도 기반 매칭을 구현했습니다. 외부 API나 모델 파인튜닝 없이 비용 0원으로 강의 특화 챗봇을 만들었고, Gradio로 UI를 제공했습니다.
-
-`Python` `Gradio` `Difflib`
+`Python` `LightGBM` `CatBoost` `Optuna` `Scikit-learn`
 
 ---
 
 ### 사용자 위치 기반 운동 추천 챗봇 앱
 [GitHub](https://github.com/DGU-BAF/BAF-25-2-sports)
 
-GPS 기반으로 주변 운동 시설을 추천하는 대화형 앱입니다. LangChain + GPT-4o-mini로 환각을 억제하고, Vector DB 유사도 검색에 유클리드 거리 필터를 결합해 물리적으로 가까운 시설을 우선 추천하도록 했습니다. Flutter 앱과 FastAPI 서버를 연동해 풀스택으로 구현했습니다.
+체육시설, 날씨, 사용자 프로필 데이터를 FastAPI, Supabase 서버와 LangGraph 기반 챗봇으로 연동해, 사용자에 맞는 운동 시설과 운동 파티를 추천하는 안드로이드 앱을 설계 및 구현.
 
 `LangChain` `OpenAI API` `FastAPI` `Flutter` `Supabase`
 
@@ -81,9 +74,25 @@ GPS 기반으로 주변 운동 시설을 추천하는 대화형 앱입니다. La
 ### 체형 기반 코디 추천 앱
 [GitHub](https://github.com/CSID-DGU/2025-2-DSCDPasitongtong-06)
 
-신체 사진으로 체형을 분류하고 보유 의류를 조합해 맞춤 코디를 제안하는 앱입니다. MediaPipe로 신체 랜드마크를 추출하고 절대 픽셀이 아닌 신체 비율(WHR, SHR)로 체형을 5가지로 분류해 촬영 환경 변화에 강한 모델을 구현했습니다. YOLOv8 + ResNet50/VGG16으로 의류 카테고리와 속성을 자동 태깅했습니다.
+MediaPipe로 전신 사진에서 체형을 자동 분류하고, YOLO, EfficientNet으로 사용자의 옷장을 디지털화한 뒤, 체형, 계절, 선호를 반영해 Top-3 코디와 설명을 추천하는 FastAPI, Supabase, Docker 기반 패션 추천 앱 개발
 
 `Python` `OpenCV` `MediaPipe` `YOLOv8` `FastAPI` `Flutter` `Supabase`
+
+---
+
+### 아동, 청소년 게임 이용 부정적 인식 개선 분석
+
+KOCCA 게임이용자 패널 5개년 데이터를 활용해 게임 행동 유형(미이용, 선용, 과몰입 등)에 따른 대인관계, 수면, 건강 인식, 학업 성취 만족도 변화를 교차단면·고정효과 패널 회귀로 분석하고, 게임의 부정적 인식 개선을 위한 정책 시사점을 도출한 연구.
+
+`R` `dplyr` `plm` `gtsummary`
+
+---
+
+### 동국대학교 파이썬 프로그래밍 챗봇 
+
+파이썬 프로그래밍 강의안에서 수집한 Q&A를 딕셔너리로 구축하고, difflib 기반 유사도 매칭과 Gradio ChatInterface를 활용해 파이썬 개념을 질의응답 형태로 안내하는 경량 교육용 챗봇 UI를 구현.
+
+`Python` `Gradio` `Difflib`
 
 <br>
 
