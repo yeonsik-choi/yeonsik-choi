@@ -8,9 +8,5 @@
 ViT 사전학습 모델 파인튜닝 + 얼굴 추출·증강 전략. **DACON Private ROC-AUC 0.829 (48/458팀, 상위 약 10%)**  
 `PyTorch` `Hugging Face` `OpenCV`
 
-## Activity
-
-<img src="https://streak-stats.demolab.com?user=yeonsik-choi&hide_border=true" alt="GitHub streak" />
-
 ## Contact
 chldustlr559@naver.com
