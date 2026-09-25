@@ -1,5 +1,3 @@
-# 최연식
-
 ## Projects
 
 ### [메이플 썬데이](https://www.maplessunday.com) · [repo](https://github.com/yeonsik-choi/maplessunday-web)
